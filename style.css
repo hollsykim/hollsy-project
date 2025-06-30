@@ -76,7 +76,7 @@ body {
 }
 
 #modal-content {
-  background-image: url('./assets/01_index/intro-box.png'); /* 🖼 이미지 파일명 */
+  background-image: url('./assets/01_index/intro-box1.png'); /* 🖼 이미지 파일명 */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
