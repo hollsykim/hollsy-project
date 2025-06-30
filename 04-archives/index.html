@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Postcard Archives</title>
+    <link rel="stylesheet" href="archives.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="../assets/04/title.png"
+        alt="Postcard Title"
+        id="postcardTitle"
+        style="width: 300px; height: auto"
+      />
+      <img id="homeBtn" src="../assets/04/home icon.png" alt="Home Button" />
+    </header>
+
+    <main id="archiveGrid">
+      <!-- JS가 여기에 thumbnail 카드들을 뿌려줍니다 -->
+    </main>
+
+    <!-- 모달 -->
+    <div id="previewModal" class="hidden">
+      <div class="overlay"></div>
+      <div class="modal-content">
+        <button id="closeModal">×</button>
+        <img id="previewImage" src="" alt="Postcard Preview" />
+        <div id="previewText"></div>
+      </div>
+    </div>
+
+    <script src="archives.js" defer></script>
+  </body>
+</html>
