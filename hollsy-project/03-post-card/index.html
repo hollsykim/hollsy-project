@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Postcard Editor</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="./post-card.css" />
+  </head>
+  <body>
+    <!-- 배경 이미지를 고정으로 깔아주는 div -->
+    <div id="background"></div>
+
+    <!-- 캔버스와 질감 오버레이(texture overlay)를 싸고 있는 컨테이너 -->
+    <div id="canvasContainer">
+      <canvas id="postcardCanvas" width="1280" height="960"></canvas>
+      <img id="textureOverlay" src="../assets/03/bg-03.png" />
+    </div>
+
+    <!-- 컨트롤 박스: 처음에는 열려 있는 상태(class="open") -->
+    <div id="controls" class="open">
+      <!-- 텍스트/배경색 선택 -->
+      <div class="controls-group">
+        <label for="textColor">TEXT COLOR</label>
+        <input type="color" id="textColor" value="#000000" />
+
+        <label for="canvasBgColor">CANVAS BACKGROUND COLOR</label>
+        <input type="color" id="canvasBgColor" value="#ffffff" />
+      </div>
+
+      <!-- 스탬프 날짜/텍스트 입력 -->
+      <div class="controls-group">
+        <label for="stampDate">STAMP DATE</label>
+        <input type="text" id="stampDate" placeholder="Select date" />
+
+        <label for="stampText">STAMP TEXT</label>
+        <input type="text" id="stampText" placeholder="Your text" />
+
+        <button id="stampBtn">STAMP</button>
+      </div>
+
+      <!-- 저장 버튼 -->
+      <div class="controls-group">
+        <button id="saveJpgBtn">SAVE AS JPG</button>
+        <button id="savePngBtn">SAVE AS PNG</button>
+      </div>
+
+      <!-- 뒤로 가기(열린 레터 박스 열기) 버튼 -->
+      <div class="controls-group">
+        <button id="backToDrawingBtn">OPEN THE LETTER BOX</button>
+        <button id="sendToArchiveBtn">SEND TO LETTER</button>
+      </div>
+    </div>
+
+    <!-- 컨트롤 박스 토글 버튼 -->
+    <button id="toggleControlsBtn" aria-label="Toggle controls">📎</button>
+
+    <!-- flatpickr 스크립트(달력) -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+    <!-- 아래 JS 파일 이름을 변경했다면 이 부분도 동일하게 맞춰주세요 -->
+    <script src="./post-card.js" defer></script>
+  </body>
+</html>

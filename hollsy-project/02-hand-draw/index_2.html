@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hand Brush Drawing</title>
+    <link rel="stylesheet" href="hand-draw.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="background"></div>
+    <video id="input_video" width="727" height="479" autoplay muted></video>
+    <canvas id="output_canvas" width="727" height="479"></canvas>
+
+    <div id="controls">
+      <label for="colorPicker">BRUSH COLOR:</label>
+      <input type="color" id="colorPicker" value="#9bba98" />
+      <label for="lineWidth">BRUSH SIZE:</label>
+      <select id="lineWidth">
+        <option value="3">THIN</option>
+        <option value="5" selected>MEDIUM</option>
+        <option value="8">THICK</option>
+        http://127.0.0.1:5500/assets/01_index/bg-01.png
+        <option value="12">EXTRA THICK</option>
+      </select>
+      <button id="goToPostcard">GO TO POSTCARD</button>
+    </div>
+
+    <div class="qa-grid">
+      <div class="qa-box">
+        <p>
+          Q1.What facial expression did I find myself making most often today?
+        </p>
+        <textarea class="qa-input" data-id="qa1"></textarea>
+      </div>
+      <div class="qa-box">
+        <p>Q2.What emotion is taking up the most space within me today?</p>
+        <textarea class="qa-input" data-id="qa2"></textarea>
+      </div>
+      <div class="qa-box">
+        <p>Q3.When today did I feel my emotions most intensely?</p>
+        <textarea class="qa-input" data-id="qa3"></textarea>
+      </div>
+      <div class="qa-box">
+        <p>Q4.If today’s emotions were a story, how would it start?</p>
+        <textarea class="qa-input" data-id="qa4"></textarea>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="../02-hand-draw/hand-draw.js"></script>
+  </body>
+
+  <style>
+    body {
+      font-family: 'Courier Prime', monospace;
+    }
+  </style>
+</html>

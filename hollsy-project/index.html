@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawn Letter – Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="envelope-container">
+      <!-- 배경 편지 봉투 이미지 -->
+      <img
+        src="./assets/01_index/bg-01.png"
+        alt="Envelope background"
+        class="envelope-image"
+      />
+
+      <!-- 중앙 도장 이미지 -->
+      <div id="stamp-wrapper">
+        <img
+          id="stamp-image"
+          src="./assets/01_index/hover-title-text.png"
+          alt="Click to Open"
+        />
+      </div>
+    </div>
+
+    <!-- 하단 텍스트 -->
+    <img
+      id="bottomTextImage"
+      src="./assets/01_index/bottom text.png"
+      alt="Intro Text"
+    />
+
+    <!-- 팝업 안내 -->
+    <div id="info-modal" class="hidden">
+      <div id="modal-content">
+        <button id="modal-close">
+          <img
+            src="./assets/01_index/close button.png"
+            alt="Close"
+            id="close-img"
+          />
+        </button>
+        <button id="startDrawingBtn">
+          <img
+            id="start-draw-img"
+            src="./assets/01_index/start-hover-button.png"
+            alt="Start Drawing"
+          />
+        </button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
