@@ -1,8 +1,3 @@
-// ────────────────────────────────────────────────────────────────────────────
-// post-card.js
-// “(1)번” 코드를 “(2)번처럼” 동작하도록 리팩터링한 최종 버전
-// ────────────────────────────────────────────────────────────────────────────
-
 window.addEventListener('DOMContentLoaded', () => {
   // ==== 요소 캐시 ====
   const canvas = document.getElementById('postcardCanvas');
@@ -87,9 +82,16 @@ window.addEventListener('DOMContentLoaded', () => {
       ctx.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height);
     }
 
-    // 3) 드로잉 이미지 (로드 완료 시에만)
+    // 3) 드로잉 이미지 (로드 완료 시에만) — 손그림을 가로로 뒤집어서 그리기
     if (isDrawingLoaded) {
+      ctx.save();
+      // 캔버스 폭만큼 이동한 뒤
+      ctx.translate(canvas.width, 0);
+      // 가로축 뒤집기
+      ctx.scale(-1, 1);
+      // 뒤집힌 좌표계에 그림 그리기
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      ctx.restore();
     }
 
     // 4) QA 4분면 텍스트 그리기
@@ -188,6 +190,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ctx.fillText('DRAWN LETTER', pad, midY / 2);
 
     // Stamp 텍스트
+    ctx.font = '16px "Nanum Myeongjo", serif';
     ctx.fillText(textVal, pad, midY + pad);
 
     // Stamp 날짜
